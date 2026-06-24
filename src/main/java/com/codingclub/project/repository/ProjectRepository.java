@@ -10,4 +10,5 @@ import java.util.List;
 public interface ProjectRepository extends JpaRepository<Project, Long> {
     List<Project> findByMemberId(Long memberId);
     List<Project> findByIsApprovedTrue();
+    List<Project> findByIsApprovedFalseAndIsRejectedFalseOrderByCreatedAtDesc();
 }
